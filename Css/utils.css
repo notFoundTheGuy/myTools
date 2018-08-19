@@ -1,0 +1,141 @@
+/* css全局变量 */
+:root {
+  /* element-Ui颜色风格 */
+  --Primary:#409EFF;
+  --Success:#67C23A;
+  --Warning:#E6A23C;
+  --Danger:#F56C6C;
+  --Info:#909399;
+  /* 多行省略--行数 */
+  --clamp-line:2;
+}
+
+/* 禁用鼠标事件、移动端禁止图片长按保存功能 */
+.no-events {
+  pointer-events: none
+}
+/* 禁止用户长按文字选择功能 */
+.unselect {
+  -webkit-touch-callout:none;
+  -webkit-user-select:none;
+  -khtml-user-select:none;
+  -moz-user-select:none;
+  -ms-user-select:none;
+  user-select:none
+}
+/* 文字模糊 */
+.blur {
+  color: transparent;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5)
+}
+/* 超出文本省略 */
+.ellipsis {
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+/* 超出n行省略 */
+.ellipsis-n {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--clamp-line,1);
+  overflow: hidden;
+}
+
+/* 可字符串拼接 */
+a:empty::after {
+ content: attr(href);
+ /* content: "字符拼接--"attr(href); */
+}
+
+/* 按钮--用户点击反馈 */
+.btn {
+  display: inline-block;
+  padding: 5px 15px;
+  border-radius: 3px;
+  cursor: pointer;
+  color: #fff;
+  background: var(--Primary);
+  user-select: none;
+}
+.btn-border {
+  display: inline-block;
+  padding: 5px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #333;
+  border: 1px solid #ccc;
+  user-select: none;
+}
+.btn-border:active,.btn:active {
+  opacity: .7;
+  /* background-color: #f1f1f1 */
+}
+
+/* 浮动 */
+.fl {
+    float: left
+}
+.fr {
+    float: right
+}
+/* 清除浮动  */
+.clearfix::after {
+  content: '';
+  display: block;
+  height: 0;
+  visibility: hidden;
+  clear: both
+}
+
+/* 文字对齐方式 */
+.tl {
+  text-align: left
+}
+.tc {
+  text-align: center
+}
+.tr {
+  text-align: right
+}
+
+/* 垂直水平居中 */
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 隐藏 */
+.hide {
+  display: none;
+}
+
+/* 字体和背景颜色 */
+.fc-blue {
+  color: var(--Primary);
+}
+.fc-green {
+  color: var(--Success);
+}
+.fc-orange {
+  color: var(--Warning);
+}
+.fc-red {
+  color: var(--Danger);
+}
+.fc-info {
+  color: #909399;
+}
+.bg-blue {
+  background: var(--Primary);
+}
+.bg-green {
+  background: var(--Success);
+}
+.bg-orange {
+  background: var(--Warning);
+}
+.bg-red {
+  background: var(--Danger);
+}

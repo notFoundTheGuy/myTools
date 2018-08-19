@@ -1,0 +1,90 @@
+/* css全局变量 */
+:root {
+  /* element-Ui颜色风格 */
+  --Primary:#409EFF;
+  --Success:#67C23A;
+  --Warning:#E6A23C;
+  --Danger:#F56C6C;
+  --Info:#909399;
+  /* 多行省略--行数 */
+  --clamp-line:2;
+}
+
+/* 三角形--下 */
+.triangle-b {
+  position: relative;
+}
+.triangle-b::after {
+  --width:8px;
+  content: '';
+  position: absolute;
+  bottom: calc(var(--width)*(-2));
+  left: 50%;
+  transform: translate(-50%,0);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: var(--width);
+  border-color: transparent;
+  border-top-color: var(--Danger);
+}
+
+/* 三角形--上 */
+.triangle-t {
+  position: relative;
+}
+.triangle-t::after {
+  --width:8px;
+  content: '';
+  position: absolute;
+  top: calc(var(--width)*(-2));
+  left: 50%;
+  transform: translate(-50%,0);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: var(--width);
+  border-color: transparent;
+  border-bottom-color: var(--Danger);
+}
+
+/* 关闭按钮 */
+.close-icon {
+  --width:  10px;
+  --height: 1px;
+  --right:0;
+  --top: 0;
+  --color: #333;
+  position: relative;
+  display: inline-block;
+  width: var(--width);
+  height: var(--width);
+
+}
+.close-icon::after {
+  content: '';
+  position: absolute;
+  left: var(--right);
+  top: var(--top);
+  width: calc(var(--width)*(1.414));
+  height: var(--height);
+  background: var(--color);
+  transform: rotate(45deg);
+  transform-origin: 0 0;
+  cursor: pointer;
+}
+.close-icon::before {
+  content: '';
+  position: absolute;
+  right: var(--right);
+  top: var(--top);
+  width: calc(var(--width)*(1.414));
+  height: var(--height);
+  background: var(--color);
+  transform: rotate(-45deg);
+  transform-origin: 100% 0;
+  cursor: pointer;
+}
+.close-icon:hover {
+
+}
